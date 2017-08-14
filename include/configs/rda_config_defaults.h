@@ -277,11 +277,15 @@
 	"root=/dev/ram rw "		\
 	"rdinit=/init"
 
+#ifdef CONFIG_RDA_PDL
+#define CONFIG_BOOTCOMMAND "mux_config; pdl2;"
+#else /* CONFIG_RDA_PDL */
 #define CONFIG_BOOTCOMMAND		\
 	"mux_config; "		\
 	"mmc dev 0; "		\
 	"ext2load mmc 0:1 ${script_addr} boot.scr && source ${script_addr};" \
 	"echo Running boot script failed;"
+#endif /* CONFIG_RDA_PDL */
 
 #endif /* !CONFIG_SPL_BUILD */
 
