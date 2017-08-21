@@ -277,6 +277,8 @@
 	"root=/dev/ram rw "		\
 	"rdinit=/init"
 
+#define CONFIG_PREBOOT "mtdparts default;"
+
 #ifdef CONFIG_RDA_PDL
 #define CONFIG_BOOTCOMMAND "mux_config; pdl2;"
 #else /* CONFIG_RDA_PDL */
