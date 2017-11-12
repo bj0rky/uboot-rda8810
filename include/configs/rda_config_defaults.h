@@ -285,7 +285,7 @@
 #define CONFIG_BOOTCOMMAND		\
 	"mux_config; "		\
 	"mmc dev 0; "		\
-	"fatload mmc 0:1 ${script_addr} boot.scr && source ${script_addr};" \
+	"ext2load mmc 0:1 ${script_addr} /fapfs/bootfs/boot.scr && source ${script_addr};" \
 	"echo Running boot script failed;"
 #endif /* CONFIG_RDA_PDL */
 
